@@ -13,6 +13,7 @@ public class Student {
         this.dob = dob;
         this.age = age;
         this.iD = iD;
+        this.username = name + String.valueOf(age);
     }
 
     public String getName() {
@@ -64,7 +65,7 @@ public class Student {
     }
 
     public String getUsername() {
-        return username + getName() + String.valueOf(getAge());
+        return username;
     }
 
     public void addModule(Module module) {
