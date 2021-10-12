@@ -6,7 +6,7 @@ public class Student {
     private String name, dob, username;
     private int age, iD;
     private List<Module> modules = new ArrayList<Module>();
-    private List<Course> courses = new ArrayList<Course>();
+    private Course course;
 
     public Student(String name, String dob, int age, int iD) {
         this.name = name;
@@ -56,12 +56,8 @@ public class Student {
         this.modules = modules;
     }
 
-    public List<Course> getCourses() {
-        return courses;
-    }
-
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
+    public Course getCourses() {
+        return course;
     }
 
     public String getUsername() {
@@ -74,9 +70,20 @@ public class Student {
         modules.add(module);
         setModules(modules);
 
-        //Associate Student with Module
+        //Associate Student With Module
         List<Student> students = module.getStudents();
         students.add(this);
         module.setStudents(students);
+
+    }
+
+    public void setCourse(Course course) {
+        //Associate Course With Student
+        this.course = course;
+
+        //Associate Student With Course
+        List<Student> students = course.getStudents();
+        students.add(this);
+        course.setStudents(students);
     }
 }
