@@ -69,15 +69,13 @@ public class Course {
     }
 
     public void addStudent(Student student) {
-        //Associate Student with Course
+
+        //Associate Student With Course
         List<Student> students = getStudents();
         students.add(student);
         setStudents(students);
 
-        //Associate Course With Student
-        List<Course> courses = student.getCourses();
-        courses.add(this);
-        student.setCourses(courses);
+        student.setCourse(this);
 
     }
 }

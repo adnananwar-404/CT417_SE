@@ -9,11 +9,17 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
-    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    implementation 'com.github.adnananwar-404:CT417_SE:-SNAPSHOT'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
     implementation group: 'joda-time', name: 'joda-time', version: '2.10.12'
+}
+
+tasks.withType(Test) {
+    testLogging {
+        exceptionFormat "full"
+        events "started", "skipped", "passed", "failed"
+        showStandardStreams true
+    }
 }

@@ -4,11 +4,11 @@ import java.util.List;
 public class Module {
 
     private String moduleName;
-    private int iD;
+    private String iD;
     private List<Student> students = new ArrayList<Student>();
     private List<Course> courses = new ArrayList<Course>();
 
-    public Module(String moduleName, int iD) {
+    public Module(String moduleName, String iD) {
         this.moduleName = moduleName;
         this.iD = iD;
     }
@@ -21,11 +21,11 @@ public class Module {
         this.moduleName = moduleName;
     }
 
-    public int getiD() {
+    public String getiD() {
         return iD;
     }
 
-    public void setiD(int iD) {
+    public void setiD(String iD) {
         this.iD = iD;
     }
 
@@ -58,12 +58,12 @@ public class Module {
     }
 
     public void addStudent(Student student) {
-        //Associate Student with Module
+        //Associate Student With Module
         List<Student> students = getStudents();
         students.add(student);
         setStudents(students);
 
-        //Update Module with Student
+        //Associate Module With Student
         List<Module> modules = student.getModules();
         modules.add(this);
         student.setModules(modules);
