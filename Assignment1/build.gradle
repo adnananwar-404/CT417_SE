@@ -1,5 +1,5 @@
 plugins {
-    id 'jar'
+    id 'java'
 }
 
 group 'Assignments'
